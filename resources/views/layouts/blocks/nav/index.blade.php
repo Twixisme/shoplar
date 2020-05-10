@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="{{ route('index') }}">А ТЫ КУПИ!</a>
+            <a class="navbar-brand" href="{{ route('index') }}">GlobaL Shop</a>
         </div>
         <div id="navbar" class="сollapse navbar-collapse">
             <ul class="nav navbar-nav">

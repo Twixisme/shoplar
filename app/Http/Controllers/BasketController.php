@@ -9,14 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class BasketController extends Controller
 {
-    public $orderIdForSession = 'orderId';
 
     public function basket()
     {
         $order = (new Basket())->getOrder();
-
         return view('basket', compact('order'));
     }
+
 
     public function place()
     {
@@ -31,8 +30,7 @@ class BasketController extends Controller
 
     public function confirm(Request $request)
     {
-        $email = Auth::check() ? Auth::user()->email : $request->email;
-        if((new Basket())->saveOrder($request->name, $request->phone, $email)){
+        if((new Basket())->saveOrder($request->name, $request->phone)){
             session()->flash('success','Ваш заказ обрабатывается');
         }else{
             session()->flash('warning', 'Товар недоступен для заказа');

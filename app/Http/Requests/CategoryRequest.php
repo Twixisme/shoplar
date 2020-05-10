@@ -25,7 +25,8 @@ class CategoryRequest extends FormRequest
     {
         $rules = [
             'code' => 'required|min:3|max:255|unique:categories,code',
-            'name' => 'required|min:3|max:255',
+            'name' => 'required|min:3|max:255|unique:categories,name',
+            'logo' => 'image|mimes:jpeg,bmp,png'
         ];
 
         if ($this->route()->named('categories.update')) {
@@ -41,6 +42,8 @@ class CategoryRequest extends FormRequest
             'required' => 'Поле :attribute обязательно для ввода',
             'min' => 'Поле :attribute должно иметь минимум :min символов',
             'code.min' => 'Поле код должно содержать не менее :min символов',
+            'unique' => 'Поле должно быть уникальным',
+            'logo' => 'image|mimes:jpeg,bmp,png'
         ];
     }
 }

@@ -26,10 +26,12 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
+
         $params = $request->all();
         unset($params['image']);
+
         if ($request->has('image')) {
-            $params['image'] = $request->file('image')->store('products');
+          $params['image'] = $request->file('image')->store('products');
         }
         Product::create($params);
         return redirect()->route('products.index');
@@ -37,7 +39,6 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-
         return view('auth.products.show', compact('product'));
     }
 

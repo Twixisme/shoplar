@@ -14,6 +14,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::paginate(12);
+        //dd($categories);
         return view('auth.categories.index', compact('categories'));
     }
 
@@ -60,4 +61,10 @@ class CategoryController extends Controller
         $category->delete();
         return redirect()->route('categories.index');
     }
+   /* public function destroy($category)
+    {
+        $categoryModel = Category::find($category);
+        $categoryModel->delete();
+        return redirect()->route('categories.index');
+    }*/
 }

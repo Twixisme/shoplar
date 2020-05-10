@@ -58,18 +58,5 @@
             </div>
         </div>
     </div>
-
-    <div>
-        <div class="row">
-            <h1>Корзина</h1>
-            <div class="d-block">
-                <div class="img-div">
-                    <img src="{{Storage::url($product->image)}}" height="100px">
-                    <h4>{{$product->name}}</h4>
-                </div>
-            </div>
-
-        </div>
-    </div>
 @endsection
 

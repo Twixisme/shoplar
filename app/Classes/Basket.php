@@ -56,13 +56,13 @@ class Basket
         return true;
     }
 
-    public function saveOrder($name, $phone, $email)
+    public function saveOrder($name, $phone)
     {
         if(!$this->countAvailable(true)){
             return false;
         }
-        Mail::to($email)->send(new OrderCreated($name, $this->getOrder()));
-        return $this->order->saveOrder($name, $phone, $email);
+
+        return $this->order->saveOrder($name, $phone);
     }
 
     public function removeProduct(Product $product)
@@ -97,6 +97,7 @@ class Basket
             if($product->count == 0){
                 return false;
             }
+
             $this->order->products()->attach($product->id);
         }
         Order::changeFullSum($product->price);

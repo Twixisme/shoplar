@@ -21,6 +21,9 @@ table {
 
 div.thumbnail img {
     max-height: 200px;
+    max-width: 200px;
+    min-width: 199px;
+    min-height: 199px;
 }
 
 div.form-inline form {
@@ -5134,9 +5137,14 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
     color: #777
 }
 
+.card-header {
+    min-height: 76px;
+    max-height: 76px;
+    overflow: hidden;
+}
+
 .pagination {
     display: flex;
-    padding-left: 2;
     margin: 20px 0;
     justify-content: center;
     align-items: center;
@@ -5454,6 +5462,8 @@ a.badge:focus, a.badge:hover {
 .thumbnail .img {
     max-height: 200px;
     max-width: 200px;
+    min-width: 199px;
+    min-height: 199px;
 }
 
 .thumbnail {
@@ -5470,7 +5480,11 @@ a.badge:focus, a.badge:hover {
 
 .thumbnail a > img, .thumbnail > img {
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
+    max-height: 200px;
+    max-width: 200px;
+    min-width: 199px;
+    min-height: 199px;
 }
 
 a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {

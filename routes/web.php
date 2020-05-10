@@ -69,6 +69,5 @@ Route::get('/about', 'AbouteController@index')->name('about');
 
 
 Route::get('/{category}', 'ProdController@category')->name('category');
-Route::get('/product', 'ProdController@get')->name('product');
-
+Route::get('/prod/{product}', 'ProdController@show')->name('product');
 

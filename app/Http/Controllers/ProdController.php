@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\DB;
 
 class ProdController extends Controller
 {
+
+    public function show(Product $product)
+    {
+        return view('prod', compact('product'));
+    }
+
     public function get()
     {
     	$products = Product::get();
@@ -29,7 +35,7 @@ class ProdController extends Controller
             $productsQuery->where('price', '<=', $request->price_to);
         }
 
-        $products = $productsQuery->paginate(12)->withPath("?".$request->getQueryString());
+        $products = $productsQuery->paginate(9)->withPath("?".$request->getQueryString());
         return view('index', compact('products'));
     }
 

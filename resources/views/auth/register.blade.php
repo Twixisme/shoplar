@@ -24,8 +24,8 @@
                                name="email" value="{{ old('email') }}" required autocomplete="email"
                                placeholder="Email">
                         @error('email')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>Этот адресс уже зарегистрирован</strong>
                                     </span>
                         @enderror
                     </div>
@@ -36,7 +36,7 @@
 
                         @error('password')
                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>Пароли должны совпадать</strong>
                                     </span>
                         @enderror
                     </div>
@@ -46,9 +46,10 @@
                                autocomplete="new-password" placeholder="Повторите пароль">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>Пароли должны совпадать</strong>
                                     </span>
                         @enderror
+
                     </div>
                     <div class="form-group ">
                         <div class="col-md-8 ">

@@ -25,9 +25,10 @@ class ProductRequest extends FormRequest
     {
         $rules = [
             'name' => 'required|min:3|max:50|unique:products,name',
-            'about' => 'required|min:3|max:255',
             'price' => 'required|numeric|min:1',
-            'count' => 'required|numeric|min:0'
+            'count' => 'required|numeric|min:0',
+            'image' => 'required|image|mimes:jpeg,bmp,png'
+
         ];
          if ($this->route()->named('products.update')) {
             $rules['name'] .= ',' . $this->route()->parameter('product')->id;
@@ -40,6 +41,8 @@ class ProductRequest extends FormRequest
             'required' => 'Поле :attribute обязательно для заполнения',
             'min' => 'Поле :attribute должно содержать минимум :min символов',
             'max' => 'Поле :attribute должно содержать максимум :max символов',
+            'image.mimes' => '...',
+            'image.image' => 'Это должна быть картинка'
         ];
     }
 }
